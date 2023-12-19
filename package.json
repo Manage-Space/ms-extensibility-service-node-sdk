@@ -1,0 +1,29 @@
+{
+    "name": "@managespace/ms-extensibility-service-node-sdk",
+    "version": "1.0",
+    "description": "NodeJS client for @managespace/ms-extensibility-service-node-sdk",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Manage-Space/ms-extensibility-service-node-sdk.git"
+    },
+    "main": "dist/api.js",
+    "types": "dist/api.d.ts",
+    "scripts": {
+        "clean": "rm -Rf node_modules/ *.js",
+        "build": "tsc",
+        "test": "npm run build && node dist/client.js"
+    },
+    "author": "OpenAPI-Generator Contributors",
+    "license": "Unlicense",
+    "dependencies": {
+        "bluebird": "^3.5.0",
+        "request": "^2.81.0",
+        "rewire": "^3.0.2"
+    },
+    "devDependencies": {
+        "@types/bluebird": "^3.5.33",
+        "@types/node": "^12",
+        "@types/request": "^2.48.8",
+        "typescript": "^4.0"
+    }
+}
