@@ -102,12 +102,8 @@ export class DefaultApi {
      * Endpoint to upload a file(custom step).
      * @summary Upload a file.
      * @param file The ZIP file to be uploaded
-     * @param projectName The name of the project to be uploaded
-     * @param description The description of the executable code.
-     * @param isPublic Is the code public or private.
-     * @param code Code for the project
      */
-    public async _import (file: RequestFile, projectName: string, description: string, isPublic: string, code?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Import200Response;  }> {
+    public async _import (file: RequestFile, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Import200Response;  }> {
         const localVarPath = this.basePath + '/extensibility/import';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -125,21 +121,6 @@ export class DefaultApi {
             throw new Error('Required parameter file was null or undefined when calling _import.');
         }
 
-        // verify required parameter 'projectName' is not null or undefined
-        if (projectName === null || projectName === undefined) {
-            throw new Error('Required parameter projectName was null or undefined when calling _import.');
-        }
-
-        // verify required parameter 'description' is not null or undefined
-        if (description === null || description === undefined) {
-            throw new Error('Required parameter description was null or undefined when calling _import.');
-        }
-
-        // verify required parameter 'isPublic' is not null or undefined
-        if (isPublic === null || isPublic === undefined) {
-            throw new Error('Required parameter isPublic was null or undefined when calling _import.');
-        }
-
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;
@@ -148,22 +129,6 @@ export class DefaultApi {
             localVarFormParams['file'] = file;
         }
         localVarUseFormData = true;
-
-        if (projectName !== undefined) {
-            localVarFormParams['projectName'] = ObjectSerializer.serialize(projectName, "string");
-        }
-
-        if (code !== undefined) {
-            localVarFormParams['code'] = ObjectSerializer.serialize(code, "string");
-        }
-
-        if (description !== undefined) {
-            localVarFormParams['description'] = ObjectSerializer.serialize(description, "string");
-        }
-
-        if (isPublic !== undefined) {
-            localVarFormParams['isPublic'] = ObjectSerializer.serialize(isPublic, "string");
-        }
 
         let localVarRequestOptions: localVarRequest.Options = {
             method: 'POST',
