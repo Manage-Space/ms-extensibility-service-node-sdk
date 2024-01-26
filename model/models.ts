@@ -3,6 +3,13 @@ import localVarRequest from 'request';
 export * from './badRequestError400Response';
 export * from './badRequestError400ResponseError';
 export * from './baseError';
+export * from './createExtensibilityFunction200Response';
+export * from './createExtensibilityFunctionRequestDto';
+export * from './executeRun200Response';
+export * from './executeRunFunctionResponse';
+export * from './executeRunRequest';
+export * from './extensibilityFunctionRequest';
+export * from './extensibilityFunctionResponse';
 export * from './forbiddenError403Response';
 export * from './forbiddenError403ResponseError';
 export * from './import200Response';
@@ -31,6 +38,13 @@ export type RequestFile = string | Buffer | fs.ReadStream | RequestDetailedFile;
 import { BadRequestError400Response } from './badRequestError400Response';
 import { BadRequestError400ResponseError } from './badRequestError400ResponseError';
 import { BaseError } from './baseError';
+import { CreateExtensibilityFunction200Response } from './createExtensibilityFunction200Response';
+import { CreateExtensibilityFunctionRequestDto } from './createExtensibilityFunctionRequestDto';
+import { ExecuteRun200Response } from './executeRun200Response';
+import { ExecuteRunFunctionResponse } from './executeRunFunctionResponse';
+import { ExecuteRunRequest } from './executeRunRequest';
+import { ExtensibilityFunctionRequest } from './extensibilityFunctionRequest';
+import { ExtensibilityFunctionResponse } from './extensibilityFunctionResponse';
 import { ForbiddenError403Response } from './forbiddenError403Response';
 import { ForbiddenError403ResponseError } from './forbiddenError403ResponseError';
 import { Import200Response } from './import200Response';
@@ -56,12 +70,21 @@ let primitives = [
                  ];
 
 let enumsMap: {[index: string]: any} = {
+        "ExecuteRunRequest.TriggerEnum": ExecuteRunRequest.TriggerEnum,
+        "ExtensibilityFunctionRequest.TriggerEnum": ExtensibilityFunctionRequest.TriggerEnum,
 }
 
 let typeMap: {[index: string]: any} = {
     "BadRequestError400Response": BadRequestError400Response,
     "BadRequestError400ResponseError": BadRequestError400ResponseError,
     "BaseError": BaseError,
+    "CreateExtensibilityFunction200Response": CreateExtensibilityFunction200Response,
+    "CreateExtensibilityFunctionRequestDto": CreateExtensibilityFunctionRequestDto,
+    "ExecuteRun200Response": ExecuteRun200Response,
+    "ExecuteRunFunctionResponse": ExecuteRunFunctionResponse,
+    "ExecuteRunRequest": ExecuteRunRequest,
+    "ExtensibilityFunctionRequest": ExtensibilityFunctionRequest,
+    "ExtensibilityFunctionResponse": ExtensibilityFunctionResponse,
     "ForbiddenError403Response": ForbiddenError403Response,
     "ForbiddenError403ResponseError": ForbiddenError403ResponseError,
     "Import200Response": Import200Response,
